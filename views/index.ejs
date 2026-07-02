@@ -31,19 +31,19 @@
     <table class="table table-hover small text-center">
       <thead>
           <tr>
-            <th width="100">Product Name</th>
-            <th width="50">Product Image</th>
-            <th width="50">Quantity</th>
-            <th width="50">Price</th>
+            <th width="100">Student Name</th>
+            <th width="50">Student Image</th>
+            <th width="50">Age</th>
+            <th width="50">Email</th>
           </tr>
       </thead>
       <tbody>
-        <% for(let i=0; i < products.length; i++) { %>
+        <% for(let i=0; i < students.length; i++) { %>
           <tr>
-            <td><a href="/product/<%= products[i].productId %>"><%= products[i].productName %></a></td>
-            <td><img src="<%= products[i].image %>" width="20%"></td>
-            <td><%= products[i].quantity %></td>
-            <td>$<%= products[i].price.toFixed(2) %></td>
+            <td><a href="/student/<%= students[i].studentId %>"><%= students[i].studentName %></a></td>
+            <td><img src="<%= students[i].image %>" width="20%"></td>
+            <td><%= students[i].age %></td>
+            <td><%= students[i].email %></td>
           </tr>
         <% } %>
       </tbody>
