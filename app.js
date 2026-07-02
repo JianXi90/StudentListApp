@@ -35,12 +35,12 @@ app.use(express.urlencoded({ extended: true }));
 // });
 // });
 
-app.get('/product/:id', (req, res) => {
-    // Extract the product ID from the request parameters
-    const productId = req.params.id;
-    const sql = 'SELECT * FROM products WHERE productId = ?';
-    // Fetch data from MySQL based on the product ID
-    connection.query(sql, [productId], (error, results) => {
+app.get('/student/:id', (req, res) => {
+    // Extract the student ID from the request parameters
+    const studentId = req.params.id;
+    const sql = 'SELECT * FROM students WHERE studentId = ?';
+    // Fetch data from MySQL based on the student ID
+    connection.query(sql, [studentId], (error, results) => {
         if (error) {
             console.error('Database query error:', error.message);
             return res.send('Error Retrieving product by ID');
