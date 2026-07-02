@@ -43,15 +43,15 @@ app.get('/student/:id', (req, res) => {
     connection.query(sql, [studentId], (error, results) => {
         if (error) {
             console.error('Database query error:', error.message);
-            return res.send('Error Retrieving product by ID');
+            return res.send('Error Retrieving student by ID');
         }
-        // Check if any product with the given ID was found
+        // Check if any student with the given ID was found
         if (results.length > 0) {
-            // Render HTML page with the product data
-            res.render('product', { product: results[0] });
+            // Render HTML page with the student data
+            res.render('students', { student: results[0] });
         } else {
-            // If no product with the given ID was found
-            res.send('Product not found');
+            // If no student with the given ID was found
+            res.send('Student not found');
         }
     });
 });
