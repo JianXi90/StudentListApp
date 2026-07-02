@@ -56,8 +56,8 @@ app.get('/student/:id', (req, res) => {
     });
 });
 
-app.get('/addStudent', (req, res) => {
-    res.render('addStudent');
+app.get('/addStudents', (req, res) => {
+    res.render('addStudents');
 });
 
 app.post('/addStudents', (req, res) => {
