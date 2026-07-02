@@ -62,10 +62,10 @@ app.get('/addStudent', (req, res) => {
 
 app.post('/addStudents', (req, res) => {
     // Extract student data from the request body
-    const { name, age, email } = req.body;
-    const sql = 'INSERT INTO students (studentName, age, email) VALUES (?, ?, ?)';
+    const { name, dob, contact, image } = req.body;
+    const sql = 'INSERT INTO students (studentName, dob, contact, image) VALUES (?, ?, ?, ?)';
     // Insert the new student into the database
-    connection.query(sql, [name, age, email], (error, results) => {
+    connection.query(sql, [name, dob, contact, image], (error, results) => {
         if (error) {
             // Handle any error that occurs during the database operation
             console.error("Error adding student:", error);

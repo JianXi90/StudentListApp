@@ -33,8 +33,8 @@
           <tr>
             <th width="100">Student Name</th>
             <th width="50">Student Image</th>
-            <th width="50">Age</th>
-            <th width="50">Email</th>
+            <th width="50">Date of Birth</th>
+            <th width="50">Contact</th>
           </tr>
       </thead>
       <tbody>
@@ -42,8 +42,8 @@
           <tr>
             <td><a href="/student/<%= students[i].studentId %>"><%= students[i].studentName %></a></td>
             <td><img src="<%= students[i].image %>" width="20%"></td>
-            <td><%= students[i].age %></td>
-            <td><%= students[i].email %></td>
+            <td><%= students[i].dob %></td>
+            <td><%= students[i].contact %></td>
           </tr>
         <% } %>
       </tbody>
