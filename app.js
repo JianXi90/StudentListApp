@@ -49,7 +49,7 @@ app.get('/student/:id', (req, res) => {
         // Check if any student with the given ID was found
         if (results.length > 0) {
             // Render HTML page with the student data
-            res.render('students', { student: results[0] });
+            res.render('student', { student: results[0] });
         } else {
             // If no student with the given ID was found
             res.send('Student not found');
@@ -61,10 +61,10 @@ app.get('/addStudents', (req, res) => {
     res.render('addStudents');
 });
 
-app.post('/addStudents', (req, res) => {
+app.post('/addStudent', (req, res) => {
     // Extract student data from the request body
     const { name, dob, contact, image } = req.body;
-    const sql = 'INSERT INTO student (name, dob, contact, image) VALUES (?, ?, ?, ?)';
+    const sql = 'INSERT INTO students (name, dob, contact, image) VALUES (?, ?, ?, ?)';
     // Insert the new student into the database
     connection.query(sql, [name, dob, contact, image], (error, results) => {
         if (error) {
@@ -80,7 +80,7 @@ app.post('/addStudents', (req, res) => {
 
 // Define routes
 app.get('/', (req, res) => {
-    const sql = 'SELECT * FROM student';
+    const sql = 'SELECT * FROM students';
     // Fetch data from MySQL
     connection.query(sql, (error, results) => {
         if (error) {
