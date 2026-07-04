@@ -64,7 +64,7 @@ app.get('/addStudents', (req, res) => {
 app.post('/addStudents', (req, res) => {
     // Extract student data from the request body
     const { name, dob, contact, image } = req.body;
-    const sql = 'INSERT INTO students (name, dob, contact, image) VALUES (?, ?, ?, ?)';
+    const sql = 'INSERT INTO student (name, dob, contact, image) VALUES (?, ?, ?, ?)';
     // Insert the new student into the database
     connection.query(sql, [name, dob, contact, image], (error, results) => {
         if (error) {
