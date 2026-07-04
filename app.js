@@ -79,7 +79,7 @@ app.post('/addStudents', (req, res) => {
 
 // Define routes
 app.get('/', (req, res) => {
-    const sql = 'SELECT * FROM students';
+    const sql = 'SELECT * FROM student';
     // Fetch data from MySQL
     connection.query(sql, (error, results) => {
         if (error) {
