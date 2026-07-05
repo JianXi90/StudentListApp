@@ -31,12 +31,12 @@
         <div class="text-center"><h2>Student Details</h2></div>
         <br>
         <% if (student) { %> <!-- Check if student data exists -->
-            <div>
-                <p><b>Student Name:</b><br> <%= student.name %></p>
-                <p><b>Student Image:</b><br> <img src="<%= student.image %>" width="50%"></p>
-                <p><b>Date of Birth:</b><br> <%= student.dob %></p>
-                <p><b>Contact:</b><br> <%= student.contact %></p> 
-            </div>
+            <tr>
+                <td><a href="/student/<%= student.studentId %>"><%= student.name %></a></td>
+                <td><img src="<%= student.image %>" width="50%"></td>
+                <td><%= student.dob %></td>
+                <td><%= student.contact %></td>
+            </tr>
         <% } else { %>
             <p>No student found.</p>
         <% } %>
