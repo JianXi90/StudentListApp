@@ -61,7 +61,7 @@ app.get('/student/:id', (req, res) => {
 });
 
 app.get('/addStudent', (req, res) => {
-    res.render('addStudents'); 
+    res.render('addStudents');
 });
 
 app.post('/addStudent', (req, res) => {
@@ -70,7 +70,7 @@ app.post('/addStudent', (req, res) => {
     const sql = 'INSERT INTO student (name, dob, contact, image) VALUES (?, ?, ?, ?)';
 
     // Insert the new student into the database
-    connection.query( sql , [name, dob, contact, image], (error, results) => {
+    connection.query(sql, [name, dob, contact, image], (error, results) => {
         if (error) {
             // Handle any error that occurs during the database operation
             console.error("Error adding student:", error);
@@ -78,6 +78,26 @@ app.post('/addStudent', (req, res) => {
         } else {
             // Send a success response
             res.redirect('/');
+        }
+    });
+});
+
+app.get('/editStudent/:id', (req, res) => {
+    const studentId = req.params.id;
+    const sql = 'SELECT * FROM student WHERE studentId = ?';
+    // Fetch data from MySQL based on the student ID
+    connection.query(sql, [studentId], (error, results) => {
+        if (error) {
+            console.error('Database query error:', error.message);
+            return res.send('Error retrieving student by ID');
+        }
+        // Check if any student with the given ID was found
+        if (results.length > 0) {
+            // Render HTML page with the student data
+            res.render('editStudent', { student: results[0] });
+        } else {
+            // If no student with the given ID was found, render a 404 page or handle it accordingly
+            res.send('Student not found');
         }
     });
 });
