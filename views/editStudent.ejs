@@ -60,22 +60,22 @@
                 </div>
 
                 <div class="mb-3">
-                  <label for="quantity" class="form-label">
-                    Quantity
+                  <label for="dob" class="form-label">
+                    Date of Birth
                   </label>
 
-                  <input type="number" class="form-control" id="quantity" name="quantity" min="0" step="1"
-                    value="<%= student.quantity %>" required>
+                  <input type="date" class="form-control" id="dob" name="dob" value="<%= student.dob %>" required>
                 </div>
 
                 <div class="mb-3">
-                  <label for="price" class="form-label">
-                    Price ($)
+                  <label for="contact" class="form-label">
+                    Contact Number
                   </label>
 
-                  <input type="number" class="form-control" id="price" name="price" min="0" step="0.01"
-                    value="<%= student.price %>" required>
+                  <input type="text" class="form-control" id="contact" name="contact" value="<%= student.contact %>" required>
                 </div>
+
+                  </label>
 
                 <div class="mb-3">
                   <label class="form-label">
@@ -83,7 +83,7 @@
                   </label>
 
                   <div class="text-center">
-                    <img src="<%= product.image %>" alt="<%= product.productName %>" class="img-fluid rounded border"
+                    <img src="<%= student.image %>" alt="<%= student.name %>" class="img-fluid rounded border"
                       style="max-height: 200px;">
                   </div>
                 </div>
