@@ -79,7 +79,7 @@ app.get('/addStudent', (req, res) => {
 app.post('/addStudent', upload.single('image'), (req, res) => {
     // Extract student data from the request body
     //const { name, dob, contact, image } = req.body;
-    const { name, quantity, price } = req.body;
+    const { name, dob, contact } = req.body;
     let image;
     if (req.file) {
         image = req.file.filename; // Save only the filename
